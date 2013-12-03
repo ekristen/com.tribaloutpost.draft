@@ -87,24 +87,33 @@ app.io.sockets.on('connection', function(socket) {
 	// if so emit initial draft table
 	// if so emit initial draft remaining players
 	client.get("draft_table", function(err, reply) {
-		if (err) console.log("Redis.ERROR: " + err);
+		if (err) {
+			console.log("Redis.ERROR: " + err);
+		}
 
-		if (reply != null)
+		if (reply != null) {
 			socket.emit('draft table', reply);
+		}
 	});
 
 	client.get("draft_players", function(err, reply) {
-		if (err) console.log("Redis.ERROR: " + err);
+		if (err) {
+			console.log("Redis.ERROR: " + err);
+		}
 
-		if (reply != null)
+		if (reply != null) {
 			socket.emit('draft players', reply)
+		}
 	});
 
 	client.get("draft_progress", function(err, reply) {
-		if (err) console.log("Redis>ERROR: " + err);
+		if (err) {
+			console.log("Redis>ERROR: " + err);
+		}
 
-		if (reply != null)
+		if (reply != null) {
 			socket.emit('draft progress', reply);
+		}
 	});
 });
 
