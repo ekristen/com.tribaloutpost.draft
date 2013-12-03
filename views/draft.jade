@@ -1,0 +1,42 @@
+doctype 5
+html
+	head
+	title TribalOutpost.com Draft Headquarters
+	link(rel='stylesheet', href='/css/bootstrap.css')
+	link(rel='stylesheet', href='/css/bootstrap-responsive.css')
+	link(rel='stylesheet', href='/css/tweaks.css')
+	script(src='/socket.io/socket.io.js')
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js')
+	script(src='/js/bootstrap.js')
+	script(src='/js/jquery.bs.alerts.js')
+	script(src='/js/sauce.js')
+body
+	div.navbar.navbar-fixed-top
+		div.navbar-inner
+			div.container-fluid
+				a(href='#').brand TribalOutpost.com Draft Headquarters
+				div.nav-collapse.collapse
+					ul.nav
+						li.active
+							a(href='#home') Home
+						li
+							a(href='http://tribaloutpost.com') Return to TribalOutpost.com
+						li
+							a(href='http://tribaloutpost.com/forums') Jump to Forums
+					span#connected.pull-right.btn unknown
+	div.content.container-fluid
+		div.row-fluid
+			div#alerts
+				div(data-alerts='alerts', data-titles='{"success": "<em>Just For Your Information</em>"}', data-ids='myid', data-fade='6000')
+				div(data-alerts='alerts', data-titles='{"warning": "<em>Player Picked</em>"}', data-ids='myid', data-fade='10000')
+		div.row-fluid
+			div#draft-progress.span12
+				span Draft Progress
+				div.progress.progress-striped.active
+					div.bar(style='width: 0%')
+		div.row-fluid
+			div#draft-table.span10
+				div.content
+			div#draft-players.span2
+				h3 Remaining Players
+				div.content
